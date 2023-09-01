@@ -1,7 +1,8 @@
-FROM node:12.2.0-alpine
+FROM ubuntu
 WORKDIR app
-COPY . .
+COPY ..
+RUN sudo apt install nodejs
+RUN sudo apt install npm
 RUN npm install
-RUN npm run test
 EXPOSE 8000
 CMD ["node","app.js"]
